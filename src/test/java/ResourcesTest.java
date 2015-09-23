@@ -1,7 +1,7 @@
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
-import org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory;
+import org.glassfish.jersey.test.inmemory.InMemoryTestContainerFactory;
 import org.glassfish.jersey.test.spi.TestContainerException;
 import org.glassfish.jersey.test.spi.TestContainerFactory;
 import org.junit.Test;
@@ -27,7 +27,7 @@ public class ResourcesTest extends JerseyTest {
 
     @Override
     protected TestContainerFactory getTestContainerFactory() throws TestContainerException {
-        return new GrizzlyTestContainerFactory();
+        return new InMemoryTestContainerFactory();
     }
 
     @Override
