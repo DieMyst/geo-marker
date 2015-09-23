@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google Marker</title>
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/point.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="jumbotron vertical-center">
+    <div class="container">
+        <div class="row"><div class="bottom-buffer"><a href ="/">Назад</a></div></div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div id="map"></div>
+            </div>
+            <div class="col-xs-6">
+                <div class="row bottom-buffer">
+                    <span class="col-xs-4 text-right">Название:</span>
+                    <span id="name"></span>
+                </div>
+                <div class="row">
+                    <span class="col-xs-4 text-right">Адрес:</span>
+                    <span id="address"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/point.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+</script>
+
+</body>
+</html>

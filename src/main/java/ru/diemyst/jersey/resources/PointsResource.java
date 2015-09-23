@@ -1,28 +1,32 @@
 package ru.diemyst.jersey.resources;
 
 import ru.diemyst.dao.PointDao;
-import ru.diemyst.dao.PointDaoImpl;
 import ru.diemyst.entities.Point;
 
-import javax.ws.rs.*;
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
  * Created by diemyst on 17.09.15.
+ * Позволяет доставать точки из базы
+ * В принципе, можно было реализовать полный REST, но для данной задачи в избытке
  */
 @Path("points")
 public class PointsResource {
 
     //здесь можно сделать Autowire и описать имплементацию в конфиге, если подключить Spring, например
-    private PointDao pointDao = PointDaoImpl.getInstance();
+    @Inject
+    private PointDao pointDao;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Point> getAllPoints() {
-        List<Point> list = pointDao.getPoints();
-        System.out.println(list);
-        return list;
+        return pointDao.getPoints();
     }
 
     @GET
@@ -32,9 +36,4 @@ public class PointsResource {
         return pointDao.getPointById(id);
     }
 
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void addPoint(Point point) {
-        pointDao.createPoint(point);
-    }
 }

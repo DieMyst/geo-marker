@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Google Marker</title>
+
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="jumbotron vertical-center">
+    <div class="container text-center">
+        <form>
+            <h3>Добавить точку</h3>
+            <div class="alert alert-danger" id="error">
+            </div>
+
+            <div class="form-group col-md-6 col-md-offset-3">
+                <input class="form-control" type="text" id="name" placeholder="введите название точки">
+            </div>
+            <div class="form-group col-md-6 col-md-offset-3">
+                <input class="form-control" type="text" id="address" placeholder="введите адрес точки">
+            </div>
+            <div class="form-group col-md-6 col-md-offset-3">
+                <input id="btn" type="submit" value="Добавить">
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <div id="points-list-container">
+            <h3>Последние добавленные точки</h3>
+
+            <ul id="points-list" class="list-inline">
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <h3>Точки на карте</h3>
+        <div id="map"></div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/main.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+</script>
+
+</body>
+</html>

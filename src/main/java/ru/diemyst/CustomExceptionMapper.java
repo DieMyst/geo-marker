@@ -9,13 +9,15 @@ import javax.ws.rs.ext.Provider;
 
 /**
  * Created by diemyst on 18.09.15.
+ * Маппер, чтоб логи писались от responses
  */
 @Provider
-public class MyExceptionMapper  implements
+public class CustomExceptionMapper implements
         ExceptionMapper<WebApplicationException> {
     @Override
     public Response toResponse(WebApplicationException ex) {
-        return Response.status(500).entity(Exceptions.getStackTraceAsString(ex)).type("text/plain")
+        String exStr = Exceptions.getStackTraceAsString(ex);
+        return Response.status(500).entity(exStr).type("text/plain")
                 .build();
     }
 }

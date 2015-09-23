@@ -31,7 +31,7 @@ public class PointDaoImpl implements PointDao {
     }
 
 
-    public EntityManager em = Persistence.createEntityManagerFactory("GEOMARKER").createEntityManager();
+    private EntityManager em = Persistence.createEntityManagerFactory("GEOMARKER").createEntityManager();
 
     @Override
     public List<Point> getPoints() {

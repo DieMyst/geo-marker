@@ -22,15 +22,19 @@ public class Point {
     private Double latitude;
 
     @Column
-    private Double longtitude;
+    private Double longitude;
+
+    @Column
+    private String address;
 
     public Point() {
     }
 
-    public Point(String name, Double latitude, Double longtitude) {
+    public Point(String name, Double latitude, Double longitude, String address) {
         this.name = name;
         this.latitude = latitude;
-        this.longtitude = longtitude;
+        this.longitude = longitude;
+        this.address = address;
     }
 
     public long getId() {
@@ -57,11 +61,19 @@ public class Point {
         this.latitude = latitude;
     }
 
-    public Double getLongtitude() {
-        return longtitude;
+    public Double getLongitude() {
+        return longitude;
     }
 
-    public void setLongtitude(Double longtitude) {
-        this.longtitude = longtitude;
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
